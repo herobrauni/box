@@ -10,5 +10,5 @@ RUN userdel -r buildhelper
 COPY extra-packages /
 RUN grep -v '^#' /extra-packages | xargs yay -S --noconfirm
 
-COPY distrobox-packages
-RUN grep -v '^#' /extra-packages | xargs yay -S --noconfirm
+COPY distrobox-packages /
+RUN grep -v '^#' /distrobox-packages | xargs yay -S --noconfirm
