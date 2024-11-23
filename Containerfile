@@ -12,3 +12,10 @@ RUN grep -v '^#' /distrobox-packages | xargs yay -S --noconfirm
 
 COPY extra-packages /
 RUN grep -v '^#' /extra-packages | xargs yay -S --noconfirm
+
+RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/podman
+RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/docker
+RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/flatpak
+RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/rpm-ostree
+RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/tailscale
+RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/transactional-update
