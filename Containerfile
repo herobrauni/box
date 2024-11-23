@@ -7,8 +7,8 @@ RUN chmod +x /tmp/add-aur.sh
 RUN /tmp/add-aur.sh buildhelper yay-bin
 RUN userdel -r buildhelper
 
-COPY extra-packages /
-RUN grep -v '^#' /extra-packages | xargs yay -S --noconfirm
-
 COPY distrobox-packages /
 RUN grep -v '^#' /distrobox-packages | xargs yay -S --noconfirm
+
+COPY extra-packages /
+RUN grep -v '^#' /extra-packages | xargs yay -S --noconfirm
