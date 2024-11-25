@@ -20,3 +20,5 @@ RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/rpm-ostree
 RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/tailscale
 RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/transactional-update
 RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/fish
+RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/just
+RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/ujust
