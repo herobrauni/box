@@ -5,12 +5,20 @@ RUN pacman -Syyu --noconfirm && pacman -S --needed base-devel git --noconfirm
 COPY distrobox-packages /
 COPY extra-packages /
 
-USER buildhelper
+RUN useradd -m --shell=/bin/bash build && usermod -L build && \
+    echo "build ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
+    echo "root ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+USER build
 RUN grep -v '^#' /distrobox-packages | xargs paru -S --noconfirm
 RUN grep -v '^#' /extra-packages | xargs paru -S --noconfirm
 
 USER root
-RUN userdel -r buildhelper
+RUN userdel -r build && \
+	rm -drf /home/build && \
+	sed -i '/build ALL=(ALL) NOPASSWD: ALL/d' /etc/sudoers && \
+	sed -i '/root ALL=(ALL) NOPASSWD: ALL/d' /etc/sudoers && \
+	rm -rf /tmp/*
 
 RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/podman
 RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/docker
