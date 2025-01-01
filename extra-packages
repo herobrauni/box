@@ -35,3 +35,4 @@ bitwarden-cli
 talosctl
 kubectl
 bind
+fluxcd
