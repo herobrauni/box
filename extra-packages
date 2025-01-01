@@ -36,3 +36,4 @@ talosctl
 kubectl
 bind
 fluxcd
+k9s
