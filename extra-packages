@@ -10,7 +10,6 @@ duf
 dust
 eza
 fd
-fish
 fzf
 gcc
 gping
@@ -37,3 +36,6 @@ kubectl
 bind
 fluxcd
 k9s
+fish-git
+helm
+sops
