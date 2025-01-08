@@ -29,3 +29,4 @@ RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/transactional-update
 # RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/fish
 RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/ujust
 RUN ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/code
+RUN ln -fs /usr/bin/distrobox-host-exec /nix/var/nix/profiles/default/bin/nix
